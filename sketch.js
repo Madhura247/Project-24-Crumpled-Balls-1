@@ -13,12 +13,12 @@ function setup() {
 	engine = Engine.create();
 	world = engine.world;
 
-	paper = new Paper(20, 650, 10);
+	paper = new Paper(50, 640, 10);
 	ground = new Ground(width/2, 670, width, 10);
 	
-	BottomBox = new Dustbin (400, 650, 200, 90);
-	LeftBox = new Dustbin (300, 610, 100, 0);
-	RightBox = new Dustbin (500, 610, 100, 0);
+	BottomBox = new Dustbin (600, 650, 200, 90);
+	LeftBox = new Dustbin (500, 610, 100, 0);
+	RightBox = new Dustbin (700, 610, 100, 0);
 
 	Engine.run(engine);
   
@@ -40,5 +40,8 @@ function draw() {
  
 }
 
-
-
+function keyPressed() {
+  if (keyCode === UP_ARROW) {
+      Matter.Body.applyForce(paper.body, paper.body.position, {x:85, y:-85})
+  }
+}
