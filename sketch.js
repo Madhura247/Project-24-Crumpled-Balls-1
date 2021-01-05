@@ -15,9 +15,9 @@ function setup() {
 	paper = new Paper(50, 400, 10);
 	ground = new Ground(width/2, 430, width, 10);
 	
-	BottomBox = new Dustbin (1320, 414, 200, 90);
-	LeftBox = new Dustbin (1220, 374, 100, 0);
-	RightBox = new Dustbin (1420, 374, 100, 0);
+	BottomBox = new Dustbin (1300, 414, 200, 90);
+	LeftBox = new Dustbin (1200, 374, 100, 0);
+	RightBox = new Dustbin (1400, 374, 100, 0);
 
 	Engine.run(engine);
   
