@@ -7,18 +7,17 @@ const Body = Matter.Body;
 var engine, world, paper, ground, BottomBox, LeftBox, RightBox;
 
 function setup() {
-	createCanvas(800, 700);
-    background (0);
+	createCanvas(1500, 500);
 
 	engine = Engine.create();
 	world = engine.world;
 
-	paper = new Paper(50, 640, 10);
-	ground = new Ground(width/2, 670, width, 10);
+	paper = new Paper(50, 400, 10);
+	ground = new Ground(width/2, 430, width, 10);
 	
-	BottomBox = new Dustbin (600, 650, 200, 90);
-	LeftBox = new Dustbin (500, 610, 100, 0);
-	RightBox = new Dustbin (700, 610, 100, 0);
+	BottomBox = new Dustbin (1300, 410, 200, 90);
+	LeftBox = new Dustbin (1200, 370, 100, 0);
+	RightBox = new Dustbin (1400, 370, 100, 0);
 
 	Engine.run(engine);
   
@@ -26,8 +25,10 @@ function setup() {
 
 
 function draw() {
-  rectMode(CENTER);
+  
   background(0);
+  rectMode(CENTER);
+  
   Engine.update(engine);
 
   paper.display();
@@ -42,6 +43,7 @@ function draw() {
 
 function keyPressed() {
   if (keyCode === UP_ARROW) {
-      Matter.Body.applyForce(paper.body, paper.body.position, {x:85, y:85})
+      Matter.Body.setStatic(paper.body, false);
+      Matter.Body.applyForce(paper.body, paper.body.position, {x:5, y:-5})
   }
 }
