@@ -15,9 +15,9 @@ function setup() {
 	paper = new Paper(50, 400, 10);
 	ground = new Ground(width/2, 430, width, 10);
 	
-	BottomBox = new Dustbin (1300, 410, 200, 90);
-	LeftBox = new Dustbin (1200, 370, 100, 0);
-	RightBox = new Dustbin (1400, 370, 100, 0);
+	BottomBox = new Dustbin (1320, 414, 200, 90);
+	LeftBox = new Dustbin (1220, 374, 100, 0);
+	RightBox = new Dustbin (1420, 374, 100, 0);
 
 	Engine.run(engine);
   
@@ -43,7 +43,7 @@ function draw() {
 
 function keyPressed() {
   if (keyCode === UP_ARROW) {
-      Matter.Body.setStatic(paper.body, false);
+    Matter.Body.setStatic(paper.body, false);
       Matter.Body.applyForce(paper.body, paper.body.position, {x:5, y:-5})
   }
 }
